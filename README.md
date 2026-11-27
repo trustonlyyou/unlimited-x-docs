@@ -85,12 +85,24 @@ for d in unlimited-x-*; do echo "== $d"; git -C $d status -sb | head -1; done
 
 ## 처음 한 번
 
-이 저장소는 아직 git에 연결하지 않았다. GitHub에 빈 저장소를 만든 뒤 연결한다.
+로컬 커밋까지 되어 있고 GitHub에는 아직 올리지 않았다. GitHub에 빈 저장소를 만든 뒤 연결한다.
 
 ```bash
 cd /d/Users/project/unlimited-x-docs
-git init -b main
-git add -A && git commit -m "docs: 저장소 뼈대와 아키텍처 결정"
 git remote add origin <GitHub 저장소 주소>
 git push -u origin main
+```
+
+이 컴퓨터에는 git 작성자 설정이 없다. 직접 커밋하려면 이 저장소에 한 번 설정한다.
+
+```bash
+git config user.name "<이름>"
+git config user.email "<이메일>"
+```
+
+다른 컴퓨터에서는 받아서 시작한다.
+
+```bash
+cd ~/project
+git clone <GitHub 저장소 주소> unlimited-x-docs
 ```
