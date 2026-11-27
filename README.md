@@ -85,24 +85,16 @@ for d in unlimited-x-*; do echo "== $d"; git -C $d status -sb | head -1; done
 
 ## 처음 한 번
 
-로컬 커밋까지 되어 있고 GitHub에는 아직 올리지 않았다. GitHub에 빈 저장소를 만든 뒤 연결한다.
+새 컴퓨터에서는 받아서 시작한다. 폴더 이름은 `unlimited-x-docs`로 맞춘다.
 
 ```bash
-cd /d/Users/project/unlimited-x-docs
-git remote add origin <GitHub 저장소 주소>
-git push -u origin main
+cd ~/project          # 사무실(Git Bash)은 cd /d/Users/project
+git clone https://github.com/trustonlyyou/unlimited-x-docs.git
 ```
 
-이 컴퓨터에는 git 작성자 설정이 없다. 직접 커밋하려면 이 저장소에 한 번 설정한다.
+커밋할 때 작성자를 묻는 오류가 나면 그 컴퓨터에 git 작성자 설정이 없는 것이다. 이 저장소에 한 번 설정한다.
 
 ```bash
 git config user.name "<이름>"
 git config user.email "<이메일>"
-```
-
-다른 컴퓨터에서는 받아서 시작한다.
-
-```bash
-cd ~/project
-git clone <GitHub 저장소 주소> unlimited-x-docs
 ```
